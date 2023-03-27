@@ -1,13 +1,14 @@
 version: '3.9'
 services:
-  cache:
+  redis:
+    container_name: redis-dev
     image: redis:7-alpine
     restart: always
     ports:
       - '6379:6379'
     volumes: 
-      - cache:/data
+      - redis:/data
 volumes:
-  cache:
+  redis:
     driver: local
 
